@@ -10,7 +10,7 @@ COPY backend/package.json backend/tsconfig.json ./backend/
 RUN cd backend && npm install
 
 # Frontend deps
-COPY frontend/package.json frontend/tsconfig.json frontend/vite.config.ts frontend/postcss.config.js frontend/tailwind.config.ts ./frontend/
+COPY frontend/package.json frontend/tsconfig.json frontend/vite.config.ts frontend/postcss.config.cjs frontend/tailwind.config.ts ./frontend/
 RUN cd frontend && npm install
 
 # Copy sources
