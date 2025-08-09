@@ -1,5 +1,5 @@
 import { useForm, useFieldArray } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { zodResolver } from '../../lib/zodResolver';
 import { accountItemSchema, AccountItemForm } from '../../lib/schemas';
 import { PhoneInputBH } from '../../components/PhoneInputBH';
 import { generatePassword } from '../../components/PasswordGenerator';
