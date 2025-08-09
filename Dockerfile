@@ -34,7 +34,7 @@ RUN useradd -m -u 10001 appuser
 COPY --from=builder /app/backend/dist ./backend/dist
 COPY --from=builder /app/backend/package.json ./backend/package.json
 COPY --from=builder /app/backend/node_modules ./backend/node_modules
-COPY --from=builder /app/.env.example ./.env.example
+COPY .env.example ./.env.example
 
 RUN mkdir -p /app/data && chown -R appuser:appuser /app
 VOLUME ["/app/data"]
