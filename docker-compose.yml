@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  accounts-vault:
+    build: .
+    container_name: accounts-vault
+    image: accounts-vault:latest
+    ports:
+      - "5177:5177"
+    environment:
+      - NODE_ENV=production
+      - PORT=5177
+    volumes:
+      - ./data:/app/data

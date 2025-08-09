@@ -1,0 +1,28 @@
+/* Theme palettes */
+:root {
+  --bg: 255 255 255;
+  --fg: 17 24 39;
+}
+/* Aurora (vibrant) */
+.theme-aurora {
+  --accent: 14 165 233;
+  --accent-contrast: 255 255 255;
+}
+/* Noir (elegant dark) */
+.theme-noir {
+  --bg: 17 17 19;
+  --fg: 236 236 236;
+  --accent: 99 102 241;
+  --accent-contrast: 255 255 255;
+}
+/* Sakura (light/soft) */
+.theme-sakura {
+  --accent: 244 114 182;
+  --accent-contrast: 255 255 255;
+}
+body {
+  background: radial-gradient(1200px 600px at 50% -20%, rgba(120,120,255,.2), transparent) ,
+              linear-gradient(180deg, rgba(0,0,0,.02), transparent);
+  color: rgb(var(--fg));
+}
+.btn-accent { background: rgb(var(--accent)); color: rgb(var(--accent-contrast)); }
