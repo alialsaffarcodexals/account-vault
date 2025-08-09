@@ -10,7 +10,7 @@ COPY backend/package.json backend/tsconfig.json ./backend/
 RUN cd backend && npm install
 
 # Frontend deps
-COPY frontend/package.json frontend/tsconfig.json frontend/vite.config.ts frontend/postcss.config.js frontend/tailwind.config.ts ./frontend/
+COPY frontend/package.json frontend/tsconfig.json frontend/vite.config.ts frontend/postcss.config.cjs frontend/tailwind.config.ts ./frontend/
 RUN cd frontend && npm install
 
 # Copy sources
@@ -34,7 +34,7 @@ RUN useradd -m -u 10001 appuser
 COPY --from=builder /app/backend/dist ./backend/dist
 COPY --from=builder /app/backend/package.json ./backend/package.json
 COPY --from=builder /app/backend/node_modules ./backend/node_modules
-COPY --from=builder /app/.env.example ./.env.example
+COPY .env.example ./.env.example
 
 RUN mkdir -p /app/data && chown -R appuser:appuser /app
 VOLUME ["/app/data"]
